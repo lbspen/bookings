@@ -1,0 +1,11 @@
+<h2>Engineers</h2>
+
+<table>
+  <% @engineers.each do |engineer| %>
+    <tr>
+      <td><%= link_to engineer.name, engineer %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New Engineer", new_engineer_path %>

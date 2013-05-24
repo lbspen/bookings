@@ -1,8 +1,9 @@
 Bookings::Application.routes.draw do
 
-  root :to => "clients#index"
+  root :to => "engineers#index"
 
   resources :clients
+  resources :engineers
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

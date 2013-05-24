@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Editing Clients" do
   before do
     client = Factory(:client, :name => "Louelle")
-    visit "/"
+    visit clients_url
     click_link client.name
     click_link "Edit"
   end    
