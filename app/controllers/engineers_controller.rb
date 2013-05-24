@@ -1,5 +1,5 @@
 class EngineersController < ApplicationController
-  before_filter :find_engineer, :only => [:show, :edit, :update]
+  before_filter :find_engineer, :only => [:show, :edit, :update, :destroy]
 
   def index
     @engineers = Engineer.all    
@@ -32,6 +32,11 @@ class EngineersController < ApplicationController
       flash[:alert] = "Engineer has not been updated."
       render :action => :edit
     end
+  end
+
+  def destroy
+    @engineer.destroy
+    redirect_to engineers_path, :notice => "Engineer has been deleted."
   end
 
   private
