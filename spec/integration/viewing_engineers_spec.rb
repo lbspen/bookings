@@ -9,12 +9,13 @@ feature "Viewing engineers" do
     page.current_url.should == engineer_url(engineer)
   end
 
-  scenario "Viewing one engineer" do
+  scenario "Viewing list of clients" do
+    booking1 = Factory.create(:booking, :engineer => engineer)
+    client = Factory.create(:client, :name => "Jay")
+    booking2 = Factory.create(:booking, :engineer => engineer, :client => client)
     visit engineer_url(engineer)
     page.should have_content(engineer.name)
-  end
-
-  scenario "Viewing list of clients" do
-    pending "View unordered list of clients"
+    page.should have_content(booking1.client.name)
+    page.should have_content(booking2.client.name)
   end
 end

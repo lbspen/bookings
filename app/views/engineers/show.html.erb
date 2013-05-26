@@ -1,4 +1,9 @@
 <h2>Engineer: <%= @engineer.name %></h2>
-<%= link_to "Edit", edit_engineer_path(@engineer) %><br />
+<h4>Clients:</h4>
+<ul>
+  <% @engineer.clients.each do |client| %>
+    <li><%= client.name %></li>
+  <% end -%>
+</ul><%= link_to "Edit", edit_engineer_path(@engineer) %><br />
 <%= link_to "Delete", @engineer, :method => :delete %><br />
 <%= link_to "Back", root_path %>

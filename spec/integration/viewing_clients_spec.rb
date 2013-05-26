@@ -14,6 +14,7 @@ feature "Viewing clients" do
     booking2 = Factory.create(:booking, :client => client, :engineer => engineer)
     visit clients_url
     click_link client.name
+    page.should have_content(client.name)
     page.should have_content(booking1.engineer.name)    
     page.should have_content(booking2.engineer.name)
   end
