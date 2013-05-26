@@ -14,6 +14,7 @@ feature "Creating Bookings -" do
     page.should have_content("Booking has been created.")
     page.should have_content(engineer.name)
     page.should have_content(client.name)
+    page.should have_content("100.00")
   end
 
   scenario "Invalid cost" do

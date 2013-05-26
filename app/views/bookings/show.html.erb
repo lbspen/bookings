@@ -8,5 +8,10 @@
     <th>Client</th>
     <td><%= @booking.client.name %></td>
   </tr>
+  <tr>
+    <th>Cost</th>
+    <td><%= sprintf("%.2f", @booking.cost) %></td>
+  </tr>
 </table>
+<%= link_to "Edit", edit_booking_path(@booking) %><br />
 <%= link_to "Back", root_path %>
