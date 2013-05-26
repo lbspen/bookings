@@ -1,10 +1,10 @@
 <h2>New Booking</h2>
 <%= form_for(@booking) do |f| %>
-  <%= f.label :engineer_id %><br />
-  <%= f.collection_select :engineer_id, @engineers, :id, :name %>
-  <%= f.label :client_id %><br />
-  <%= f.collection_select :client_id, @clients, :id, :name %>
-  <%= f.label :cost %><br />
-  <%= f.text_field :cost %>
+  <%= f.label :engineer_id %>
+  <%= f.collection_select :engineer_id, @engineers, :id, :name %><br />
+  <%= f.label :client_id %>
+  <%= f.collection_select :client_id, @clients, :id, :name %><br />
+  <%= f.label :cost %>
+  <%= f.text_field :cost %><br />
   <%= f.submit %>
 <% end -%>

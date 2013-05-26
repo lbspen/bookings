@@ -1,2 +1,14 @@
 <h2>Bookings</h2>
-<%= link_to "New Booking", new_booking_path %>
+<table>
+  <% @bookings.each do |booking| %>
+  <tr>
+    <td><%= booking.engineer.name %></td>
+    <td><%= booking.client.name %></td>
+    <td><%= booking.cost %></td>
+  </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to "New Booking", new_booking_path %><br />
+<%= link_to "New Engineer", new_engineer_path %><br />
+<%= link_to "New Client", new_client_path %>

@@ -12,6 +12,8 @@ feature "Creating Bookings -" do
     fill_in "Cost", :with => "100"
     click_button "Create Booking"
     page.should have_content("Booking has been created.")
+    page.should have_content(engineer.name)
+    # page.should have_content(client.name)
   end
 
   scenario "Invalid cost" do
