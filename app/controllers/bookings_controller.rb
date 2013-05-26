@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_filter :find_booking, :only => [:show, :edit, :update]
+  before_filter :find_booking, :only => [:show, :edit, :update, :destroy]
   before_filter :select_form_choices, :only => [:new, :edit]
   before_filter :find_engineer_and_client, :only => [:create, :update]
 
@@ -30,6 +30,11 @@ class BookingsController < ApplicationController
     @booking.engineer = @engineer
     @booking.update_attributes(params[:booking].slice(:cost))
     redirect_to @booking, :notice => "Booking was successfully updated."
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to root_path  
   end
 
   private

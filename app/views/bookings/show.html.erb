@@ -14,4 +14,5 @@
   </tr>
 </table>
 <%= link_to "Edit", edit_booking_path(@booking) %><br />
+<%= link_to "Delete", @booking, :method => :delete, :confirm => "Are you sure you want to delete?" %><br />
 <%= link_to "Back", root_path %>
