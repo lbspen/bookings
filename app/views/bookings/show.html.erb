@@ -1,4 +1,12 @@
 <h2>Booking</h2>
-<p>
-  Engineer: <%= @booking.engineer.name %>
-</p>
+<table>
+  <tr>
+    <th>Engineer</th>
+    <td><%= @booking.engineer.name %></td>
+  </tr>
+  <tr>
+    <th>Client</th>
+    <td><%= @booking.client.name %></td>
+  </tr>
+</table>
+<%= link_to "Back", root_path %>

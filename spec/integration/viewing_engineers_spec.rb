@@ -13,4 +13,8 @@ feature "Viewing engineers" do
     visit engineer_url(engineer)
     page.should have_content(engineer.name)
   end
+
+  scenario "Viewing list of clients" do
+    pending "View unordered list of clients"
+  end
 end

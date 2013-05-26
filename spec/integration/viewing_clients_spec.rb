@@ -7,4 +7,8 @@ feature "Viewing clients" do
     click_link client.name
     page.current_url.should == client_url(client)
   end
+
+  scenario "Viewing all engineers" do
+    pending "View unordered list of engineers"
+  end
 end

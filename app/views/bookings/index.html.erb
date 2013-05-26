@@ -1,10 +1,17 @@
 <h2>Bookings</h2>
 <table>
+  <tr>
+    <th>Engineer</th>
+    <th>Client</th>
+    <th>Cost</th>
+    <th></th>
+  </tr>
   <% @bookings.each do |booking| %>
   <tr>
-    <td><%= booking.engineer.name %></td>
-    <td><%= booking.client.name %></td>
+    <td><%= link_to booking.engineer.name, booking.engineer %></td>
+    <td><%= link_to booking.client.name, booking.client %></td>
     <td><%= booking.cost %></td>
+    <td><%= link_to "Show", booking %></td>
   </tr>
   <% end %>
 </table>
