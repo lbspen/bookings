@@ -1,4 +1,10 @@
-<h2>Client: <%= @client.name %></h2>
+<h2>Client: <%= @client.name %></h2><br />
+<h4>Engineers:</h4>
+<ul>
+  <% @client.engineers.each do |engineer| %>
+    <li><%= engineer.name %></li>
+  <% end -%>
+</ul>
 <%= link_to "Edit", edit_client_path(@client) %><br />
 <%= link_to "Delete", @client, :method => :delete %> <br />
 <%= link_to "Back", root_path %>

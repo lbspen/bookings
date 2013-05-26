@@ -63,12 +63,12 @@ input[type=file] {
     background: #FF3444;
 }
 
-ul#qandas {
+ul {
     padding: 15px;
     list-style-type: none;
 }
 
-ul#qandas li {
+ul li {
     margin-bottom: 10px;
 }
 
@@ -95,16 +95,16 @@ ul#qandas li {
     background: #C2EC4B;
 }
 
-ul#qandas .state {
+ul .state {
     padding-right: 5px;
     /*  margin-right: 4em;*/
 }
 
-ul#qandas .state {
+ul .state {
     float: left;
 }
 
-#qanda, .comment {
+.comment {
     margin: 15px 0 15px 0;
     padding: 15px;
     background: #eaeaea;
@@ -113,19 +113,19 @@ ul#qandas .state {
     -webkit-border-radius: 5px;
 }
 
-#qanda a {
+a {
     color: #67A300;
 }
 
-#qanda menu {
+menu {
     font-size: 75%;
 }
 
-menu, #qanda .state, .states {
+menu, .state, .states {
     float: right;
 }
 
-#qanda section {
+section {
     clear: both;
 }
 
@@ -141,11 +141,11 @@ menu, #qanda .state, .states {
     padding: 5px;
 }
 
-#qanda #tags {
+#tags {
     margin-top: 20px;
 }
 
-#qanda .tag {
+.tag {
     background: #232323;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -153,11 +153,11 @@ menu, #qanda .state, .states {
     padding: 8px;
 }
 
-#qanda .tag a {
+.tag a {
     color: white;
 }
 
-#qanda .tag .delete {
+.tag .delete {
     font-size: 125%;
     text-decoration: none;
 }
