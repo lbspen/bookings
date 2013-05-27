@@ -21,9 +21,17 @@ feature "Creating Bookings -" do
   end
 
   scenario "Invalid cost" do
+    fill_in "Cost", :with => ""
+    click_button "Create Booking"
+    page.should have_content("Booking was not created.")
+    page.should have_content("Cost can't be blank")
     fill_in "Cost", :with => "abc"
     click_button "Create Booking"
     page.should have_content("Booking was not created.")
     page.should have_content("Cost is not a number")
+    fill_in "Cost", :with => "-1"
+    click_button "Create Booking"
+    page.should have_content("Booking was not created.")
+    page.should have_content("Cost must be greater than or equal to 0")  
   end
 end
