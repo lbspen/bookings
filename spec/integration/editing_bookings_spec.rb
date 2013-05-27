@@ -20,4 +20,8 @@ feature "Editing Bookings " do
     page.should have_content(new_client.name)
     page.should have_content(200)
   end
+
+  scenario "Invalid cost" do
+    pending "Should not allow invalid cost"
+  end
 end

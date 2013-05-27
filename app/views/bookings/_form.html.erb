@@ -1,4 +1,5 @@
 <%= form_for(@booking) do |f| %>
+  <%= error_messages_for @booking, :header_message => nil %>
   <%= f.label :engineer_id %>
   <%= f.collection_select :engineer_id, @engineers, :id, :name %><br />
   <%= f.label :client_id %>

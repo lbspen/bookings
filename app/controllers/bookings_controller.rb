@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_filter :find_booking, :only => [:show, :edit, :update, :destroy]
-  before_filter :select_form_choices, :only => [:new, :edit]
+  before_filter :select_form_choices, :only => [:new, :edit, :create, :update]
   before_filter :find_engineer_and_client, :only => [:create, :update]
 
   def index
@@ -16,6 +16,9 @@ class BookingsController < ApplicationController
     @booking.client = @client
     if @booking.save
       redirect_to @booking, :notice => "Booking has been created."
+    else
+      flash[:alert] = "Booking was not created."
+      render :action => "new"
     end
   end
 
