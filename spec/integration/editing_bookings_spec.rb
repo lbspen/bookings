@@ -22,6 +22,11 @@ feature "Editing Bookings " do
   end
 
   scenario "Invalid cost" do
-    pending "Should not allow invalid cost"
+    visit "/"
+    click_link("Edit")
+    fill_in :cost, :with => ""
+    click_button("Update Booking")
+    page.should have_content("Booking was not updated.")
+    page.should have_content("Cost can't be blank")
   end
 end

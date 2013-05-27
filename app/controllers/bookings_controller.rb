@@ -31,8 +31,12 @@ class BookingsController < ApplicationController
   def update
     @booking.client = @client
     @booking.engineer = @engineer
-    @booking.update_attributes(params[:booking].slice(:cost))
-    redirect_to @booking, :notice => "Booking was successfully updated."
+    if @booking.update_attributes(params[:booking].slice(:cost))
+      redirect_to @booking, :notice => "Booking was successfully updated."
+    else
+      flash[:alert] = "Booking was not updated."
+      render :action => "edit"
+    end
   end
 
   def destroy
